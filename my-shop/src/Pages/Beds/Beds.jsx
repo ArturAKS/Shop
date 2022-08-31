@@ -1,5 +1,5 @@
 import React from 'react'
-import Items from '../../Companents/Itemes'
+import Search from '../../Companents/Search'
 
 export default function Beds(props) {
         let beds = [ {
@@ -40,11 +40,7 @@ export default function Beds(props) {
       }]
   return (
     <div>
-        <div className='main'>
-    {beds.map(el => (
-        <Items item={el} key={el.id} add={props.onAdd} changeModal={props.changeModal}/>
-    ))}
-</div>
-</div>
+      <Search arr={beds} add={props.onAdd} changeModal={props.changeModal}/>    
+    </div>
   )
 }

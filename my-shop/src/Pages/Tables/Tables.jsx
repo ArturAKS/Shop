@@ -1,5 +1,5 @@
 import React from 'react'
-import Items from '../../Companents/Itemes'
+import Search from '../../Companents/Search'
 
 export default function Tables(props) {
       let tables = [ {
@@ -40,11 +40,7 @@ export default function Tables(props) {
       }]
   return (
     <div>
-        <div className='main'>
-    {tables.map(el => (
-        <Items item={el} key={el.id} add={props.onAdd} changeModal={props.changeModal}/>
-    ))}
-</div>
+        <Search arr={tables} add={props.onAdd} changeModal={props.changeModal}/>
     </div>
   )
 }

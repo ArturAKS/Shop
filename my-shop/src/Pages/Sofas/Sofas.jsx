@@ -1,5 +1,5 @@
 import React from 'react'
-import Items from '../../Companents/Itemes'
+import Search from '../../Companents/Search'
 
 export default function Sofas(props) {
         let sofas = [ {
@@ -67,11 +67,7 @@ export default function Sofas(props) {
       }]
   return (
     <div>
-        <div className='main'>
-    {sofas.map(el => (
-        <Items item={el} key={el.id} add={props.onAdd} changeModal={props.changeModal}/>
-    ))}
-</div>
+        <Search arr={sofas} add={props.onAdd} changeModal={props.changeModal}/>
     </div>
   )
 }
