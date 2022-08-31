@@ -19,7 +19,7 @@ export default function Search(props) {
     {sorted.map(el => (
         <Items item={el} key={el.id} add={props.onAdd} changeModal={props.changeModal}/>
     ))}
-</div>
+</div> 
 
     </div>
   )
