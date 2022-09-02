@@ -1,10 +1,9 @@
 import React from 'react'
+
 import Search from '../../Companents/Search'
 
 
-
-
-export default function chaires(props) {
+export default function Chaires(props) {
        let chaires = [
         {
           id: "c1",
@@ -44,9 +43,7 @@ export default function chaires(props) {
         }]
   return (
     <div>
-        <div className='main'>
-        <Search arr={chaires} add={props.onAdd} changeModal={props.changeModal}/>
-           </div>
+          <Search arr={chaires} add={props.onAdd} />
     </div>
   )
 }

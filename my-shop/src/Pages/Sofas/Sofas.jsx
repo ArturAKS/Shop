@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Search from '../../Companents/Search'
 
 export default function Sofas(props) {
@@ -67,7 +68,7 @@ export default function Sofas(props) {
       }]
   return (
     <div>
-        <Search arr={sofas} add={props.onAdd} changeModal={props.changeModal}/>
+        <Search arr={sofas} add={props.onAdd} />
     </div>
   )
 }

@@ -1,31 +1,37 @@
 import React from 'react'
 import { useState } from 'react'
+import {  NavLink} from "react-router-dom"
+
 import { CgMenu } from "react-icons/cg"
+import { BiFilter } from "react-icons/bi"
 import { TiShoppingCart } from "react-icons/ti"
+
 import Cart from './Cart'
 import Menu from './Menu'
-import {
-  NavLink
-} from "react-router-dom"
+
 
   function Navbar (props) {
     let [menuShow, setMenuShow] = useState(false)
     let [cartShow, setCartShow] = useState(false)
+
+    const menuIconTypes = () => {
+      if(menuShow) {return (<div> <BiFilter className='manuBar' onClick={(e) =>{e.stopPropagation(); setMenuShow( false)}}/>  <Menu /> </div>)}
+        else{return (<CgMenu className='manuBar' onClick={(e) =>{e.stopPropagation(); setMenuShow(menuShow = true)}}/> )}
+    }
+
+    const cartShowFunc = e => { e.stopPropagation();setCartShow(cartShow = !cartShow)}
+
+
   return (
-    
-      <div onClick={()=> {setMenuShow(menuShow = false); setCartShow(cartShow = false) }}>
+    <div >
       <div className='navBar'>
-        <span> <CgMenu className={`manuBar ${menuShow && 'active'}`} onClick={(e) =>{e.stopPropagation(); setMenuShow(menuShow = !menuShow)}}/></span>
+        <div className='menuList'>{ menuIconTypes()}</div>      
         <ul> 
-        <li><TiShoppingCart className='shoppingCart' onClick= {(e) => { e.stopPropagation();setCartShow(cartShow = !cartShow)}} /></li>
+        <li><TiShoppingCart className={`shoppingCart ${cartShow && 'active'}`} onClick= {cartShowFunc} /></li>
         <li><NavLink className='homeLink' to='/'>Home</NavLink></li>
         </ul>
       </div>
-      {menuShow && ( <Menu />
-      )}
       {cartShow &&( <Cart list={props.list} remove={props.remove} />)}
-      {menuShow  && ( <div className='hiddenDiv'></div> )}
-      
     </div>
   )
 }

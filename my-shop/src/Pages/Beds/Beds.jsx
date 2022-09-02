@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Search from '../../Companents/Search'
 
 export default function Beds(props) {
@@ -40,7 +41,7 @@ export default function Beds(props) {
       }]
   return (
     <div>
-      <Search arr={beds} add={props.onAdd} changeModal={props.changeModal}/>    
+      <Search arr={beds} add={props.onAdd} />    
     </div>
   )
 }

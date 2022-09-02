@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Search from '../../Companents/Search'
 
 export default function Tables(props) {
@@ -40,7 +41,7 @@ export default function Tables(props) {
       }]
   return (
     <div>
-        <Search arr={tables} add={props.onAdd} changeModal={props.changeModal}/>
+        <Search arr={tables} add={props.onAdd} />
     </div>
   )
 }
